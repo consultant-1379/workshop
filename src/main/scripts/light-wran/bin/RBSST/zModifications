@@ -1,0 +1,65 @@
+#!/bin/sh
+
+####################################
+#
+# Ver1: Created for R6.2 TERE.
+#
+####################################
+
+if [ "$#" -ne 3  ]
+then
+cat<<HELP
+
+#######################################################################
+#                                                                     #
+#                             HELP                                    #
+#                                                                     #
+#######################################################################
+
+Usage  : $0 <sim name> <env file> <rnc num>
+
+Example: $0 WegaC5LargeRNC14 SIM1.env 9 (to create RNC09)
+
+CREATE :-
+
+SET    :-
+
+DELETE :-
+
+HELP
+ exit 1
+fi
+
+
+cat >> $MMLSCRIPT << MMLSCT
+
+.open $SIMNAME 
+.selectregexp simne $RBSNES 
+.start 
+useattributecharacteristics:switch="off";
+kertayle:file="$PWD/$MOSCRIPT";
+
+MMLSCT
+
+
+
+cat >> $MOSCRIPT << MOSCT
+
+
+cat >> $MMLSCRIPT << MMLSCT
+
+  .open $SIMNAME
+  .select $RNCNAME$RBSNAME$COUNT
+  .start
+  useattributecharacteristics:switch="off";
+  kertayle:file="$PWD/$MOSCRIPT";
+
+MMLSCT
+
+# adding line above after .open
+:%s/.open/cat >> $MMLSCRIPT << MMLSCT ^M .open /g   
+
+# changing line with 
+:%s/echo *[u]/u/g
+
+

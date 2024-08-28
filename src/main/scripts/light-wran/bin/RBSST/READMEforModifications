@@ -1,0 +1,13 @@
+MODIFICATION FILES
+
+ztest.sh >>> to test invidual scripts which needs SIM,ENV,RNCNUM
+
+zmodifications >>> has some scripts to copy from 
+
+zmodify.sh >>> to modify old simgen scripts
+  ztemp.tmp >> used within zmodify as a dump
+  ztemp0.tmp >> used within zmodify as a dump
+  ztemp2.tmp >> used within zmodify as a dump
+
+
+

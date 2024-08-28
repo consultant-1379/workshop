@@ -1,0 +1,8 @@
+1 sh: no transport
+2 sh: ATM transport
+3 sh: High Speed transport
+4 sh: High Speed transport (from RBS 180 to NUMOFRBS)
+5 sh: High Speed transport (from RBS 601 to NUMOFRBS)
+6 sh: ARW
+7 sh: IP transport
+8 sh: IP transport (for RNC19)
